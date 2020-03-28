@@ -28,9 +28,8 @@ $("#add-train").on("click", function (event) {
     database.ref().push(record);
 
     //clear text fields
-    $("#train-name-input").empty();
-    $("#destination-input").empty();
-    //this is a different way to clear the text fields
+    $("#train-name-input").val("");
+    $("#destination-input").val("");
     $("#first-train-input").val("");
     $("#frequency-input").val("");
 
