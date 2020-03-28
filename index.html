@@ -8,22 +8,25 @@
     <title>Train Scheduler</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 train-sched">
                 <header>
                     <h1>Catch Your Train</h1>
-                    <h5>Want to make sure your train is ... on track? Too many snakes on that g-damn plane? Well choo-choose another method of transport.</h5>
+                    <h5>Want to make sure your train is ... on track? Too many snakes on that g-damn plane? Well
+                        choo-choose another method of transport.</h5>
                 </header>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 train-input">
+                <h3 class="group-head">Current Train Schedule</h3>
                 <table class="table" id="data-display">
-                    <thead class="thead-light">
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Train Name</th>
                             <th scope="col">Destination</th>
@@ -58,6 +61,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h3 class="group-head">Add Train</h3>
                 <form>
                     <div class="form-group">
                         <label for="train">Train Name</label>
@@ -68,15 +72,18 @@
                     </div>
                     <div class="form-group">
                         <label for="destination">Destination</label>
-                        <input type="text" class="form-control" id="destination-input" name="destination" placeholder="Union Station">
+                        <input type="text" class="form-control" id="destination-input" name="destination"
+                            placeholder="Union Station">
                     </div>
                     <div class="form-group">
                         <label for="first-train">First Train (Military Time: HH:MM)</label>
-                        <input type="text" class="form-control" id="first-train-input" name="first-train" placeholder="HH:MM">
+                        <input type="text" class="form-control" id="first-train-input" name="first-train"
+                            placeholder="HH:MM">
                     </div>
                     <div class="form-group">
                         <label for="frequency">Frequency</label>
-                        <input type="integer" class="form-control" id="frequency-input" name="frequency" placeholder="30">
+                        <input type="integer" class="form-control" id="frequency-input" name="frequency"
+                            placeholder="30">
                     </div>
                     <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -16,6 +16,7 @@ var database = firebase.database();
 
 $("#add-train").on("click", function (event) {
     event.preventDefault();
+    //necessary-ish because our button is in a form
 
     var record = {
         name: $("#train-name-input").val(),
@@ -29,6 +30,7 @@ $("#add-train").on("click", function (event) {
     //clear text fields
     $("#train-name-input").empty();
     $("#destination-input").empty();
+    //this is a different way to clear the text fields
     $("#first-train-input").val("");
     $("#frequency-input").val("");
 
@@ -51,6 +53,7 @@ database.ref().on("child_added", function (snapshot) {
     //change format to hh:mm 
     var formatFirstTrain = firstTrain.format("hh:mm A");
     //moment() gives us current moment
+    //math.abs takes absolute value of minute value so we don't display negative number
     var trainMinutes = Math.abs(moment().diff(firstTrain, "minutes"));
     var calcMinAway = trainMinutes % frequency;
     // if (trainMinutes > 0) {
@@ -59,14 +62,13 @@ database.ref().on("child_added", function (snapshot) {
     // } else {
         var nextTrain = moment().add(calcMinAway, "m").format("hh:mm A");
     // }
+    //that was me trying to figure out how to show when the first train of the day hasn't even left yet... 
     var tRow = $('<tr>').append(
         $('<td>').text(trainName),
         $('<td>').text(destination),
-        // $('<td>').text(firstTrain),
         $('<td>').text(frequency),
         $('<td>').text(nextTrain),
         $('<td>').text(calcMinAway)
-
 
     );
     $("table tbody").append(tRow);
